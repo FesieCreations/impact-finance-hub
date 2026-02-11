@@ -1,0 +1,1136 @@
+:root {
+    /* Primary Brand Colors */
+    --green-primary: #0f5132;   /* Main brand green */
+    --green-accent: #198754;    /* Buttons, highlights, links */
+    
+    /* Neutral Colors */
+    --black-main: #111111;      /* Main text */
+    --gray-dark: #333333;       /* Sub-headings */
+    --gray-light: #f5f5f5;      /* Section backgrounds */
+    --white-main: #ffffff;     /* Page background */
+
+    /* Supporting Colors */
+    --border-light: #e0e0e0;    /* Borders & dividers */
+    --shadow-soft: rgba(0, 0, 0, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--white-main);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 36px;
+    height: 36px;
+}
+
+.logo span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--green-primary);
+}
+
+/* Toggle Button */
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--green-primary);
+}
+
+@media (min-width: 768px) {
+    .nav-toggle{
+        display: none;
+
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 61px;
+        width: 100%;
+    }
+    .navbar .mobile-menu {
+        display: flex;
+        height: 100%;
+        border-bottom: none;
+        overflow: visible;
+    }
+    .navbar .mobile-menu ul {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--white-main);
+    transition: max-height 0.35s ease;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu li {
+    border-top: 1px solid var(--border-light);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--black-main);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.mobile-menu a:hover {
+    background-color: var(--gray-light);
+    color: var(--green-primary);
+}
+
+/* Active state */
+.mobile-menu.open {
+    max-height: 400px; /* enough for all links */
+}
+
+/* Active navigation link */
+.mobile-menu a.active {
+    color: var(--green-primary);
+    background-color: var(--gray-light);
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--white-main);
+    padding: 60px 16px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: var(--green-primary);
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    margin-bottom: 24px;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Primary Button */
+.primary-btn {
+    background-color: var(--green-accent);
+    color: var(--white-main);
+}
+
+/* Secondary Button */
+.secondary-btn {
+    border: 1px solid var(--green-primary);
+    color: var(--green-primary);
+    background-color: transparent;
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 60px 16px;
+    background-color: var(--gray-light);
+}
+
+.what-we-do h2 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Cards container */
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Individual card */
+.service-card {
+    background-color: var(--white-main);
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-soft);
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: var(--green-primary);
+}
+
+.service-card p {
+    color: var(--gray-dark);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black-main);
+    color: var(--white-main);
+    padding: 50px 16px 20px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.footer h3,
+.footer h4 {
+    color: var(--white-main);
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* Footer links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--green-accent);
+}
+
+/* Bottom text */
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaaaaa;
+}
+
+/* About Page Container */
+.about-page {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Intro Section */
+.about-intro {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+.about-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Section Styling */
+.about-section {
+    margin-bottom: 40px;
+    padding: 20px 16px;
+    border-radius: 10px;
+}
+
+.light-bg {
+    background-color: var(--gray-light);
+}
+
+/* Section Headings */
+.about-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: var(--green-primary);
+    margin-bottom: 12px;
+}
+
+/* Paragraphs */
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+    margin-bottom: 16px;
+}
+
+/* Values List */
+.values-list {
+    padding-left: 20px;
+}
+
+.values-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--black-main);
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+    .about-intro h1 {
+        font-size: 2.4rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .about-section p, .values-list li {
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .about-intro h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-section p, .values-list li {
+        font-size: 1.1rem;
+    }
+
+    .about-page {
+        padding: 60px 20px;
+    }
+}
+
+
+/* Leadership Intro */
+.leadership-intro {
+    max-width: 700px;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Executive Cards */
+.executives {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Card */
+.executive-card {
+    background-color: var(--white-main);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 14px var(--shadow-soft);
+}
+
+/* Image */
+.executive-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 14px;
+    border: 3px solid var(--green-accent);
+}
+
+/* Name */
+.executive-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+/* Role */
+.executive-card .role {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green-primary);
+    margin-bottom: 10px;
+}
+
+/* Description */
+.executive-card p {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+}
+
+/* Desktop upgrade */
+@media (min-width: 768px) {
+    .executives {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Learn Page */
+.learn-page {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Learn Intro */
+.learn-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.learn-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+.learn-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Learn Sections */
+.learn-section {
+    margin-bottom: 60px;
+}
+
+.learn-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--green-primary);
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+/* Learn Cards */
+.learn-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.learn-card {
+    background-color: var(--white-main);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px var(--shadow-soft);
+}
+
+.learn-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--green-primary);
+}
+
+.learn-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--gray-dark);
+}
+
+@media (min-width: 768px) {
+    .learn-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #777;
+    max-width: 700px;
+}
+
+
+/* Learn CTA */
+.learn-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--green-primary);
+    color: #fff;
+    margin-top: 60px;
+}
+
+.learn-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.learn-cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.primary-btn1 {
+    background-color: #fff;
+    color: var(--green-primary);
+}
+
+.primary-btn1:hover {
+    background-color: #f0f0f0;
+}
+
+.outline-btn {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.outline-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Programs Page */
+.programs-page {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Programs Intro */
+.programs-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.programs-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+.programs-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Programs Section */
+.programs-section h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+/* Programs Cards */
+.programs-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.program-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.program-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--green-primary);
+}
+
+.program-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Tablet & up */
+@media (min-width: 768px) {
+    .programs-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Participation Section */
+.participation-section {
+    margin-top: 80px;
+}
+
+.participation-section h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+.participation-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.participation-item {
+    background-color: var(--light-gray);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.participation-item h3 {
+    color: var(--green-primary);
+    margin-bottom: 10px;
+}
+
+.participation-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Tablet & up */
+@media (min-width: 768px) {
+    .participation-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Programs CTA */
+.programs-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--green-primary);
+    color: #fff;
+    margin-top: 60px;
+}
+
+.programs-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.programs-cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.programs-cta .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.programs-cta .btn {
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.programs-cta .primary-btn {
+    background-color: #fff;
+    color: var(--green-primary);
+}
+
+.programs-cta .primary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.programs-cta .outline-btn {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.programs-cta .outline-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Resources Page */
+.resources-page {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Resources Intro */
+.resources-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.resources-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+.resources-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Resources Section */
+.resources-section h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+/* Resource Cards */
+.resources-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.resource-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.resource-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--green-primary);
+}
+
+.resource-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Tablet & up */
+@media (min-width: 768px) {
+    .resources-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Resource Lists */
+.resource-lists {
+    margin-top: 80px;
+}
+
+.resource-group {
+    margin-bottom: 50px;
+}
+
+.resource-group h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+.resource-group ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.resource-group li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+}
+
+/* Resources CTA */
+.resources-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--green-primary);
+    color: #fff;
+    margin-top: 60px;
+}
+
+.resources-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.resources-cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.resources-cta .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+
+/* Join Page */
+.join-page {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Join Intro */
+.join-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.join-intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: var(--green-primary);
+    margin-bottom: 16px;
+}
+
+
+.join-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Join Benefits */
+.join-benefits {
+    margin-top: 80px;
+}
+
+.join-benefits h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+/* Benefits Cards */
+.benefits-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--green-primary);
+}
+
+.benefit-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+/* Tablet & up */
+@media (min-width: 768px) {
+    .benefits-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Join Form Section */
+.join-form-section {
+    margin-top: 80px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.join-form-section h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: var(--gray-dark);
+}
+
+/* Form */
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green-primary);
+}
+
+.join-form button {
+    align-self: center;
+    margin-top: 10px;
+}
+
+
+/* Join CTA Section */
+.join-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--green-primary);
+    color: #fff;
+    margin-top: 60px;
+    border-radius: 8px;
+}
+
+.join-cta h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.join-cta p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.join-cta a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.join-cta .social-icons {
+    margin: 10px 0 20px;
+    font-size: 0.95rem;
+}
+
+.join-cta .cta-button {
+    margin-top: 20px;
+}
+
+.join-cta .cta-button a {
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: var(--green-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.join-cta .cta-button a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Webinars Section */
+.webinars-section {
+    margin-top: 80px;
+}
+
+.webinars-section h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+/* Webinar Cards Grid */
+.webinar-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Individual Webinar Card */
+.webinar-card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.webinar-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.webinar-card h3 {
+    color: var(--green-primary);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.webinar-card p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: var(--gray-dark);
+}
+
+.webinar-card a.btn {
+    text-decoration: none;
+    padding: 8px 20px;
+}
+
+/* Tablet & up */
+@media (min-width: 768px) {
+    .webinar-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop & up */
+@media (min-width: 1024px) {
+    .webinar-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
